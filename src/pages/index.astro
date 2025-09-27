@@ -33,10 +33,11 @@ const courses = await getCollection('course');
 						{courses.map((course) => (
 							<div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
 								{course.data.thumbnail && (
-									<img
-										src={course.data.thumbnail}
+									<img 
+										src={course.data.thumbnail} 
 										alt={course.data.title}
 										class="w-full h-48 object-cover"
+										loading="lazy"
 									/>
 								)}
 								<div class="p-6">

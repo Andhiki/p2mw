@@ -12,23 +12,4 @@ export default defineConfig({
   },
 
   integrations: [react()],
-
-  // Enable content collections
-  content: {
-    collections: {
-      course: {
-        type: "content",
-        schema: {
-          type: "object",
-          properties: {
-            layout: { type: "string" },
-            title: { type: "string" },
-            slug: { type: "string" },
-            thumbnail: { type: "string" },
-          },
-          required: ["title", "slug"],
-        },
-      },
-    },
-  },
 });
