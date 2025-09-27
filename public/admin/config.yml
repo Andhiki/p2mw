@@ -15,6 +15,6 @@ media_folder: "src/assets/images" # Location where files will be stored in the r
 public_folder: "src/assets/images" # The src attribute for uploaded media
 
 backend:
-  name: GitHub
+  name: github
   repo: "Andhiki/p2mw"
   branch: main # Branch to update (optional; defaults to master)
