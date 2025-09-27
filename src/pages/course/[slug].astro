@@ -1,0 +1,21 @@
+---
+import Layout from '@/layouts/main.astro';
+import { getCollection } from "astro:content";
+
+// `Astro.params.slug` gives you the slug from the URL
+const { slug } = Astro.params;
+
+// Example: get blog post from collection
+const course = await getCollection("course").then(posts =>
+  posts.find((c) => c.slug === slug)
+);
+
+if (!course) {
+  throw new Error(`Course not found for slug: ${slug}`);
+}
+---
+
+<Layout content={{ title: course.data.title }}>
+  <h1>{course.data.title}</h1>
+  <article set:html={course.body} />
+</Layout>

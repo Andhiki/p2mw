@@ -1,7 +1,8 @@
 ---
-import '../styles/global.css';
-// Component Imports
-import Button from '../components/Button.astro';
+import '@/styles/global.css';
+
+import Container from '@/components/container.astro';
+import Button from '@/components/button.astro';
 
 // Full Astro Component Syntax:
 // https://docs.astro.build/basics/astro-components/
@@ -17,9 +18,10 @@ import Button from '../components/Button.astro';
 	</head>
 
 	<body>
-		<div class="grid place-items-center h-screen content-center">
+		<Container>
 			<Button>Tailwind Button in Astro!</Button>
 			<a href="/markdown-page" class="p-4 underline">Markdown is also supported...</a>
-		</div>
+			<a href="/course" class="p-4 underline">Courses</a>
+		</Container>
 	</body>
 </html>
