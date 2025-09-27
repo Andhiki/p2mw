@@ -1,7 +1,7 @@
 collections:
   - name: "course"
     label: "Course"
-    folder: "src/content/course"
+    folder: "public/content/course"
     create: true
     fields:
       - { label: "Layout", name: "layout", widget: "hidden", default: "course" }
@@ -9,8 +9,8 @@ collections:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Featured Image", name: "thumbnail", widget: "image" }
 
-media_folder: "src/assets/images"
-public_folder: "src/assets/images"
+media_folder: "/public/assets/images"
+public_folder: "/public/assets/images"
 
 backend:
   name: github
