@@ -2,17 +2,15 @@
 import Layout from '@/layouts/main.astro';
 import { getCollection } from "astro:content";
 
-// `Astro.params.slug` gives you the slug from the URL
-const { slug } = Astro.params;
-
-// Example: get blog post from collection
-const course = await getCollection("course").then(posts =>
-  posts.find((c) => c.slug === slug)
-);
-
-if (!course) {
-  throw new Error(`Course not found for slug: ${slug}`);
+export async function getStaticPaths() {
+  const courses = await getCollection("course");
+  return courses.map((course: any) => ({
+    params: { slug: course.data.slug },
+    props: { course },
+  }));
 }
+
+const { course } = Astro.props as { course: any };
 ---
 
 <Layout content={{ title: course.data.title }}>

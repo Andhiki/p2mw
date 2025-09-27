@@ -1,11 +1,22 @@
 ---
 import { Button } from '@/components/ui/button';
 import Layout from '@/layouts/main.astro';
+import { getCollection } from 'astro:content';
+
+const courses = await getCollection('course');
+console.log(courses);
 ---
 
 <Layout content={{ title: "Courses" }}>
   <div>
     <h1>Courses</h1>
     <Button>dsadsa</Button>
+    <ul class="bg-red-100">
+      {courses.map((course: any) => (
+        <li>
+          <a href={`/course/${course.data.slug}`}>{course.data.title}</a>
+        </li>
+      ))}
+    </ul>
   </div>
 </Layout>
